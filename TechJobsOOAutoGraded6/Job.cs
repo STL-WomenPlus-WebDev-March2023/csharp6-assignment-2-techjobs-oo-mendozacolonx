@@ -3,8 +3,8 @@ namespace TechJobsOOAutoGraded6
 {
 	public class Job
 	{
+        
         /*
-
             public int Id { get; }
             private static int nextId = 1;
             public string Name { get; set; }
@@ -14,11 +14,41 @@ namespace TechJobsOOAutoGraded6
             public CoreCompetency JobCoreCompetency { get; set; }
 
             // TODO: Task 3: Add the two necessary constructors.
+            
+        //this constuructor will set the id to hte nextID property and then increment it by 1
+            public Job()
+            {
+                Id = nextId;
+                nextId++;
+            }
 
-            // TODO: Task 3: Generate Equals() and GetHashCode() methods.  
+            //this contructor extends the first job constructor
+            public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
+            {
+                Name = name;
+                EmployerName = employerName;
+                EmployerLocation = employerLocation;
+                JobType = jobType;
+                JobCoreCompetency = jobCoreCompetency;
+            }
 
-            // TODO: Task 5: Generate custom ToString() method.
-                //Until you create this method, you will not be able to print a job to the console.
+            public override bool Equals(object? obj)
+            {
+                return obj is Job job &&
+                       Id == job.Id;
+            }
+
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Id);
+            }
+
+        // TODO: Task 3: Generate Equals() and GetHashCode() methods.  
+
+
+
+        // TODO: Task 5: Generate custom ToString() method.
+        //Until you create this method, you will not be able to print a job to the console.
 
 
         */
