@@ -1,4 +1,6 @@
-﻿
+﻿//added using statement because giving error of missing assembly reference
+using TechJobs.Tests;
+
 namespace TechJobsOO.Tests
 {
     [TestClass]
