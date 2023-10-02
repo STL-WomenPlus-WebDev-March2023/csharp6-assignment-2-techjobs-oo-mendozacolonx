@@ -3,8 +3,6 @@ namespace TechJobsOOAutoGraded6
 {
 	public class Job
 	{
-        
-        
             public int Id { get; }
             private static int nextId = 1;
             public string Name { get; set; }
@@ -49,9 +47,24 @@ namespace TechJobsOOAutoGraded6
 
         // TODO: Task 5: Generate custom ToString() method.
         //Until you create this method, you will not be able to print a job to the console.
+        public override string ToString()
+        {
+            if ( Name == null)
+            {
+                Name = "Data not available";
+            }
+
+            return 
+                $"{Environment.NewLine}Id: {Id}{Environment.NewLine}" +
+                $"{Environment.NewLine}Name: {Name}{Environment.NewLine}" +
+                $"{Environment.NewLine}Employer: {EmployerName}{Environment.NewLine}" +
+                $"{Environment.NewLine}Location: {EmployerLocation}{Environment.NewLine}" +
+                $"{Environment.NewLine}Position Type: {JobType}{Environment.NewLine}" +
+                $"{Environment.NewLine}Core Competency: {JobCoreCompetency}{Environment.NewLine}" 
+                ;
+        }
 
 
-        
     }
 }
 

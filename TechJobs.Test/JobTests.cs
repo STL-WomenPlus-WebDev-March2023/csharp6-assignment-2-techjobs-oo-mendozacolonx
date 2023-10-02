@@ -1,9 +1,12 @@
 ﻿
+using System.Data;
+using System.Xml.Linq;
+
 namespace TechJobs.Tests
 {
-	[TestClass]
-	public class JobTests
-	{
+    [TestClass]
+    public class JobTests
+    {
         //Testing Objects
         //initalize your testing objects here
 
@@ -34,11 +37,12 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestJobConstructorSetsAllFields()
         {
+            //why does job not have .value append?
             Assert.AreEqual(job3.Name, "Product tester");
             Assert.AreEqual(job3.EmployerName.Value, "ACME");
             Assert.AreEqual(job3.EmployerLocation.Value, "Desert");
-            Assert.AreEqual(job3.JobType.Value, "Quality Control");
-            Assert.AreEqual(job3.JobCoreCompetency, "Persistence");
+            Assert.AreEqual(job3.JobType.Value, "Quality control");
+            Assert.AreEqual(job3.JobCoreCompetency.Value, "Persistence");
         }
 
         [TestMethod]
@@ -46,14 +50,52 @@ namespace TechJobs.Tests
         {
             Assert.IsFalse(job3 == job4);
         }
+
+
         [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
+            Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
+            Assert.IsTrue(job4.ToString().StartsWith(Environment.NewLine));
+            Assert.IsTrue(job4.ToString().EndsWith(Environment.NewLine));
 
+        }
 
-        //[TestMethod]
-        //public void TestMethod()
-        //{
-        //    //TODO: Task 4: remove this method before you create your first test method 
-        //}
-    }
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Assert.AreEqual(
+                job3.ToString(),
+                $"{Environment.NewLine}Id: {job3.Id}{Environment.NewLine}" +
+                $"{Environment.NewLine}Name: Product test{Environment.NewLine}" +
+                $"{Environment.NewLine}Employer: ACME{Environment.NewLine}" +
+                $"{Environment.NewLine}Location: Desert{Environment.NewLine}" +
+                $"{Environment.NewLine}Position Type: Quality control{Environment.NewLine}" +
+                $"{Environment.NewLine}Core Competency: Persistence{Environment.NewLine}" +
+                $"{Environment.NewLine}"
+            );
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            Assert.AreEqual(
+                job3.ToString(),
+                $"{Environment.NewLine}Id: {job3.Id}{Environment.NewLine}" +
+                $"{Environment.NewLine}Name: {job3.Name}{Environment.NewLine}" +
+                $"{Environment.NewLine}Employer: {job3.EmployerName}{Environment.NewLine}" +
+                $"{Environment.NewLine}Location: {job3.EmployerLocation}{Environment.NewLine}" +
+                $"{Environment.NewLine}Position Type: {job3.JobType}{Environment.NewLine}" +
+                $"{Environment.NewLine}Core Competency: {job3.JobCoreCompetency}{Environment.NewLine}" 
+               
+            );
+        }
+            //[TestMethod]
+            //public void TestMethod()
+            //{
+            //    //TODO: Task 4: remove this method before you create your first test method 
+            //}
+        }
 }
 

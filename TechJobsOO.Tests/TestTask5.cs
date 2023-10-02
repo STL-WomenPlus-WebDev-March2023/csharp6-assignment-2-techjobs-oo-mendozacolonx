@@ -1,4 +1,6 @@
 ﻿
+using TechJobs.Tests;
+
 namespace TechJobsOO.Tests
 {
 	[TestClass]
@@ -8,7 +10,7 @@ namespace TechJobsOO.Tests
         //Uses jobs from the Job class.
         //Tests are numbered.
 
-        /*TODO: Task 5: Remove this line to uncomment the tests
+        //TODO: Task 5: Remove this line to uncomment the tests
 
         //Unit Test 1:  TestToStringStartsAndEndsWithNewLine  -----------------------
 
@@ -38,7 +40,7 @@ namespace TechJobsOO.Tests
         }
 
 
-        [TestMethod]  //2
+        [TestMethod]  //2 //HAS problem
         public void Test_TestToString_Starts_And_Ends_With_NewLine()
         {
             //comparing output to a text file.
@@ -145,7 +147,7 @@ namespace TechJobsOO.Tests
             //verify
             Assert.AreEqual(text, output, "Empty string handling error");
         }
-        TODO: Task 5: Remove this line to uncomment the tests*/
+        //TODO: Task 5: Remove this line to uncomment the tests*/
 
     }
 
