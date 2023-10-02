@@ -15,7 +15,8 @@ namespace TechJobsOOAutoGraded6
         //    nextId++;
         //}
 
-        public CoreCompetency(string v) : base()
+        //changed from this() to base(value)
+        public CoreCompetency(string value) : base(value)
         {
            // Value = v;
         }

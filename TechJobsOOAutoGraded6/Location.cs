@@ -17,7 +17,7 @@ namespace TechJobsOOAutoGraded6
         // that uses the Location() constructor and
         // sets the value of the value field.
 
-        public Location(string value) : base()
+        public Location(string value) : base(value)
         {
             //Value = value;
         }
