@@ -68,12 +68,12 @@ namespace TechJobs.Tests
             Assert.AreEqual(
                 job3.ToString(),
                 $"{Environment.NewLine}Id: {job3.Id}{Environment.NewLine}" +
-                $"{Environment.NewLine}Name: Product test{Environment.NewLine}" +
+                $"{Environment.NewLine}Name: Product tester{Environment.NewLine}" +
                 $"{Environment.NewLine}Employer: ACME{Environment.NewLine}" +
                 $"{Environment.NewLine}Location: Desert{Environment.NewLine}" +
                 $"{Environment.NewLine}Position Type: Quality control{Environment.NewLine}" +
-                $"{Environment.NewLine}Core Competency: Persistence{Environment.NewLine}" +
-                $"{Environment.NewLine}"
+                $"{Environment.NewLine}Core Competency: Persistence{Environment.NewLine}"
+                
             );
         }
 
